@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado - Alura Challange</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" class="icono" href="imagenes/Vector.png" alt="icono">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1 class="titulo">Ahorcado Alura Challange</h1>
+    </header>
+    <main>
+        <div class="logo">
+            <img alt="logo" src="imagenes/Vector.png">
+        </div>
+        <div class="ahorcado">
+            <img alt="hombre-ahorcado" id="hombre" src="imagenes/estado_inicial.png">
+        </div>
+        <div class="adivinado">
+            <span class="letra adivinada">A</span>
+            <span class="letra adivinada">L</span>
+            <span class="letra adivinada"></span>
+            <span class="letra adivinada"></span>
+            <span class="letra adivinada">A</span>
+        </div>
+        <div class="errado">
+            <span class="letra errada">B</span>
+            <span class="letra errada">J</span>
+            <span class="letra errada">K</span>
+            <span class="letra errada">C</span>
+        </div>
+        <form class="botones">
+            <input type="button" class="azul" value="Nuevo Juego">
+            <input type="button" class="default" value="Desistir">
+        </form>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html> 
