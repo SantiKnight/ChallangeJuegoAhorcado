@@ -1,10 +1,12 @@
 ;(function(){
-    let juego = {
-        palabra: "ALURA",
-        estado: 4,
-        adivinado: ['A','L'],
-        errado: ['B','J','K','C']
-    }
+    'use strict'
+
+    const palabras = ['ALURA', 'SCRIPT','GITHUB','VISUAL','ESTUDIO','CONSOLA','ADMIN','SCRIPT','ESTILO','CASCADA','CABALLO','OVEJA','CABRA','AUDIO','SONIDO','PROFETA','PINGO','KATANA','ORACLE','JUEGO','PROGRAMA','GRATUITO','YOUTUBE','DIRECTO'];
+     
+    // variable para almacenar la configuracion actual           
+    let juego = null
+    //para ver si ya se ha enviada alguna alerta
+    let finalizado = false
 
     let $html = {
         hombre: document.getElementById('hombre'),
@@ -13,11 +15,17 @@
     }
 
     function dibujar(juego){
+        //Actualizar imagen
         let $elem
         $elem = $html.hombre
+
         let estado = juego.estado
+        if(juego.estado===8){
+            estado = juego.previo
+        }
         $elem.src = 'imagenes/0' + estado + '.png'
 
+        //Creamos las letras adivinadas
         let palabra = juego.palabra
         let adivinado = juego.adivinado
         $elem = $html.adivinado
@@ -34,6 +42,7 @@
             $elem.appendChild($span)
         }
 
+        //Creamos las letras erradas
         let errado = juego.errado
         $elem = $html.errado
         //Borramos los elementos anteriores
@@ -51,8 +60,8 @@
     function adivinar(juego, letra){
         let estado = juego.estado
         // si ya se a perdido o ganado, nada que hacer
-        if (estado===0 || estado===8){
-            return
+        if (estado===1 || estado===8){
+            return  
         }
 
         let adivinado = juego.adivinado
@@ -76,30 +85,62 @@
             }
             //si ya se ha ganado debemos indicarlo 
             if(ganado){
-                alert('Felicitaciones! Usted ganó')
+                juego.estado = 8;
             }
             //agregar la letra a la lista de letras adivinadas
             adivinado.push(letra)
         }
         else{
             //si no es letra de la palabra, acercamos al hombre un paso mas a ser ahorcado y agregamos la letr a las letras erradas
-            juego.estado++
+            juego.estado = juego.estado-1
             errado.push(letra)
         }
     }
 
     window.onkeypress = function adivinarLetra(e){
         let letra = e.key
-        letra = letra.toUpperCase()
-        if(/[A-ZÑ]/.test(letra)){
-            adivinar(juego,letra)
-            dibujar(juego)
+        letra = letra.toUpperCase() 
+        if(/[^A-ZÑ]/.test(letra)){
+            return
         }
-        else{
-            alert('Solo letras')
+        adivinar(juego, letra)
+        let estado = juego.estado
+        if(estado === 8 && !finalizado){
+            alertaGanado()
+            finalizado = true
+        }else if(estado === 1 && !finalizado){
+            let palabra = juego.palabra
+            alertaPerdido(palabra)
+            finalizado = true
         }
-        
+        dibujar(juego)
     }
 
-    dibujar(juego)
+    window.nuevoJuego = function nuevoJuego(){
+        let palabra = palabraAleatoria()
+        juego = {}
+        juego.palabra = palabra
+        juego.estado = 7
+        juego.adivinado = []
+        juego.errado = []
+        finalizado = false
+        dibujar(juego)
+        console.log(juego)
+    }
+
+    function palabraAleatoria(){
+        let index = Math.trunc(Math.random() * palabras.length)
+        return palabras[index]
+    }
+
+    function alertaGanado(){
+        alert('Felicidades, ganaste!')
+    }
+
+    function alertaPerdido(palabra){
+        alert('Lo siento, perdiste... La palabra era: '+palabra)
+    }
+
+    nuevoJuego()
+    console.log(juego)
 }())
