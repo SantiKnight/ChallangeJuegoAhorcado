@@ -4,17 +4,53 @@ html{
     font-family: 'Montserrat', sans-serif;
 }
 
+body{
+    background-color: #F3F5FC;
+}
+
 header{
     background-color: #0A3871;
     margin: 0 0 10px 0;
-    padding: 5px;
+    padding: 8px;
     font-size: 20px;
     color: #F3F5FC;
     text-align: center;
+    text-decoration: underline #F3F5FC;
 }
 
 .logo{
     margin: 20px;
+}
+
+.botones-bienvenida{
+    text-align: center;
+    margin-top: 22rem;
+}
+
+#btn-iniciar{
+    padding: 2.6rem;
+    font-size: 1.2rem;
+    margin: -20rem 100rem 3rem 52rem;
+}
+
+.input-text {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 25rem;
+    margin-top: 10rem;
+    font-size: 1.5rem;
+    display: block;
+    font-weight: bold;
+    color: #0A3871;
+    border: none;
+    max-width: 120rem;
+    resize: none;
+    background-color: #F3F5FC;
+}
+
+.botones-agregar{
+    text-align: center;
+    margin-top: 20rem;
 }
 
 #hombre{

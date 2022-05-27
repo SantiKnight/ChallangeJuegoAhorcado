@@ -17,20 +17,44 @@
         <h1 class="titulo">Ahorcado Alura Challange</h1>
     </header>
     <main>
-        <div class="logo">
-            <img alt="logo" src="imagenes/Vector.png">
-        </div>
-        <div class="ahorcado">
-            <img alt="hombre-ahorcado" id="hombre">
-        </div>
-        <div class="adivinado"></div>
-        <div class="errado"></div>
-        <form class="botones">
-            <input type="button" class="azul" value="Nuevo Juego" onclick="nuevoJuego()">
-            <input type="button" class="default" value="Desistir">
-        </form>
+        <section class="bienvenida">
+            <div class="logo">
+                <img alt="logo" src="imagenes/Vector.png">
+            </div>
+            <form class="botones-bienvenida">
+                <input type="button" class="azul" id="btn-iniciar" value="Inciar juego" onclick="nuevoJuego()">
+                <input type="button" class="default" value="Agregar Nueva Palabra" onclick="ocultar()">
+            </form>
+        </section>
+        <section class="agregar-palabra invisible">
+            <div class="logo">
+                <img alt="logo" src="imagenes/Vector.png">
+            </div>
+            <div class="input-texto">
+                <textarea class="input-text" cols="30" rows="3" placeholder="Ingrese una palabra"></textarea>
+            </div>
+            <form class="botones-agregar">
+                <input type="button" class="azul" id="btn-guardar" value="Guardar y empezar" onclick="guardar()">
+                <input type="button" class="default" value="Cancelar" onclick="cancelar()">
+            </form>
+        </section>
+        <section class="juego-ahorcado invisible">
+            <div class="logo">
+                <img alt="logo" src="imagenes/Vector.png">
+            </div>
+            <div class="ahorcado">
+                <img alt="hombre-ahorcado" id="hombre">
+            </div>
+            <div class="adivinado"></div>
+            <div class="errado"></div>
+            <form class="botones">
+                <input type="button" class="azul" value="Nuevo Juego" onclick="nuevoJuego()">
+                <input type="button" value="Desistir" onclick="desistir()">
+            </form>
+        </section>
     </main>
 
     <script src="js/app.js"></script>
+    <script src="js/bienvenida.js"></script>
 </body>
 </html> 
