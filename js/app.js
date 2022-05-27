@@ -151,6 +151,7 @@ function guardar(){
             input = input.toUpperCase()
             palabras.push(input)
             nuevoJuego()
+            input.value = ""
         }else{
             alert('Ingrese una palabra válida,en mayúsculas, entre 2 y ocho letras y sin numeros...')
             input.value = ""
