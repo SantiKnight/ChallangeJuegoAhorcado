@@ -1,12 +1,13 @@
 
 let bienvenida = document.querySelector('.bienvenida');
 let principal = document.querySelector('.juego-ahorcado');
-let agregar = document.querySelector('.agregar-palabra')
+let agregar = document.querySelector('.agregar-palabra');
 
 function iniciarJuego(){
     bienvenida.classList.add("invisible");
     agregar.classList.add("invisible");
     principal.classList.remove("invisible");
+    
 }
 
 function ocultar(){
