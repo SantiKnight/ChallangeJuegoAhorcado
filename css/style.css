@@ -124,3 +124,72 @@ header{
 .invisible{
     display: none;
 }
+
+/* FORMATO TABLET */
+
+@media screen and (min-width: 768px){
+    .botones-bienvenida{
+        margin-top: 15rem;
+    }
+
+    #btn-iniciar{
+        display: block;
+        padding: 2.6rem;
+        font-size: 1.2rem;
+        margin: 0 0 2rem 17.5rem;
+    }
+
+    .input-text {
+        margin-left: 3rem;
+        margin-top: 6rem;
+        max-width: 20rem;
+    }
+
+    .botones-agregar{
+        margin-top: 20rem;
+    }
+
+    #btn-cancelar{
+        margin-left: 1rem;
+    }
+
+    #btn-desistir{
+        margin-left: 1.5rem;
+    }
+
+}
+
+/*FORMATO CELULAR*/
+
+@media screen and (max-width:480px){
+
+    .botones-bienvenida{
+        margin-top: 10rem;
+    }
+
+    #btn-iniciar{
+        padding: 2.6rem;
+        font-size: 1.2rem;
+        margin: 0 0 2rem 0;
+    }
+
+    .input-text {
+        margin-left: 1rem;
+        margin-top: 3rem;
+        max-width: 20rem;
+    }
+
+    .botones-agregar{
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    }
+
+    #btn-cancelar{
+        margin-top: 1rem;
+    }
+
+    #btn-desistir{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
