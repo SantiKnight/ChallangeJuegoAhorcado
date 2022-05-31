@@ -1,4 +1,4 @@
-html{
+    html{
     font-size: 16px;
     font-family: 'Inter', sans-serif;
     font-family: 'Montserrat', sans-serif;
@@ -6,6 +6,7 @@ html{
 
 body{
     background-color: #F3F5FC;
+    min-height: 100vh;
 }
 
 header{
@@ -119,6 +120,24 @@ header{
 .default{
     background-color: #F3F5FC;
     color: #0A3871;
+}
+
+footer{
+    text-align: center;
+    background-color: #0A3871;
+    padding: 20px;
+}
+
+.img-footer{
+    border-radius: 6px;
+    height: 60px;
+    width: auto;
+    margin: 0 10px;
+}
+
+.sticky-footer{
+    position: sticky;
+    top: 100%;
 }
 
 .invisible{
