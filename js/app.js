@@ -160,11 +160,11 @@ function guardar(){
 }
 
 function desistir(){
-    if(finalizado==true){
-        cancelar()
-    }else{
+    if(!finalizado){
         let palabra = juego.palabra
         alert('Muy difícil? La palabra era: '+palabra)
+        cancelar()
+    }else{
         cancelar()
     }
     
